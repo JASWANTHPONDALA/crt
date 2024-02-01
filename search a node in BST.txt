@@ -1,0 +1,110 @@
+#search a node in BST:
+class Node:
+    def __init__(self,x):
+        self.data=x
+        self.left=None
+        self.right=None
+    def insert(self,x):
+        if self.data==None:
+            self.data=x
+            return
+        if self.data>x:
+            if self.left==None:
+                self.left=Node(x)
+            else:
+                self.left.insert(x)
+        else:
+            if self.right==None:
+                self.right=Node(x)
+            else:
+                self.right.insert(x)
+    def show(self):
+        if self.left:
+            self.left.show()
+        print(self.data,end=" ")
+        if self.right:
+            self.right.show()
+    def search(self,sno):
+        if self.data==sno:
+            print("Search element is found")
+            return
+        if self.data>sno:
+            if self.left:
+                self.left.search(sno)
+            else:
+                print("Search element is not found")
+        else:
+            if self.right:
+                self.right.search(sno)
+            else:
+                print("Search element is not found")
+root=Node(30)
+while True:
+    print()
+    print("1.Insert\n2.show\n3.Search\n4.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        x=int(input("enter element"))
+        root.insert(x)
+    elif ch==2:     
+        root.show()
+    elif ch==3:
+        sno=int(input("enter search no"))
+        root.Search(sno)
+    elif ch==4:
+        exit
+    else:
+        print("invalid choice")
+        
+
+OUTPUT:
+1.Insert
+2.show
+3.Search
+4.exit
+enter your choice1
+enter element24
+
+1.Insert
+2.show
+3.Search
+4.exit
+enter your choice1
+enter element36
+
+1.Insert
+2.show
+3.Search
+4.exit
+enter your choice1
+enter element56
+
+1.Insert
+2.show
+3.Search
+4.exit
+enter your choice1
+enter element42
+
+1.Insert
+2.show
+3.Search
+4.exit
+enter your choice3
+enter search no24
+Search element is found
+
+1.Insert
+2.show
+3.Search
+4.exit
+enter your choice3
+enter search no74
+Search element is not found
+
+1.Insert
+2.show
+3.Search
+4.exit
+            
+        
