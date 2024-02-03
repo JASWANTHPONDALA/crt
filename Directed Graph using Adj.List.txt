@@ -1,0 +1,105 @@
+Create and Print Directed Graph using Adj.List:
+
+def addNode(v):
+    if v in graph:
+        print(v,"is already available")
+    else:
+        graph[v]=[]
+def show():
+    for x in graph:
+        print(x,":",graph[x])
+def addEdge(node1,node2):
+    if node1 not in graph:
+        print(node1,"is not present in graph")
+    elif node2 not in graph:
+        print(node2,"is not present in graph")
+    else:
+        graph[node1].append(node2)
+graph={}
+while True:
+    print()
+    print("1.AddNode\n2.AddEdge\n3.print\n4.Exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        v=input("enter Node")
+        addNode(v)
+    elif ch==2:
+        node1=input("enter node1")
+        node2=input("enter node2")
+        addEdge(node1,node2)
+    elif ch==3:
+        show()
+    else:
+        print("invalid choice")
+
+output:
+
+1.AddNode
+2.AddEdge
+3.print
+4.Exit
+enter your choice1
+enter NodeA
+
+1.AddNode
+2.AddEdge
+3.print
+4.Exit
+enter your choice1
+enter NodeB
+
+1.AddNode
+2.AddEdge
+3.print
+4.Exit
+enter your choice1
+enter NodeC
+
+1.AddNode
+2.AddEdge
+3.print
+4.Exit
+enter your choice1
+enter NodeD
+
+1.AddNode
+2.AddEdge
+3.print
+4.Exit
+enter your choice2
+enter node1A
+enter node2B
+
+1.AddNode
+2.AddEdge
+3.print
+4.Exit
+enter your choice2
+enter node1B
+enter node2D
+
+1.AddNode
+2.AddEdge
+3.print
+4.Exit
+enter your choice2
+enter node1A
+enter node2C
+
+1.AddNode
+2.AddEdge
+3.print
+4.Exit
+enter your choice2
+enter node1C
+enter node2D
+
+1.AddNode
+2.AddEdge
+3.print
+4.Exit
+enter your choice3
+A : ['B', 'C']
+B : ['D']
+C : ['D']
+D : []
